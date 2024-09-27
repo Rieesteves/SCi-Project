@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithm Adventure</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="game-container">
+        <div class="flex items-center justify-center">
+            <div class="text-center p-4 max-w-2xl mx-auto">
+                <h1 class="text-4xl font-bold text-gray-800 mb-6 uppercase">
+                    🚀 ALGORITHM ADVENTURE 🚀
+                </h1>
+                <div id="game-description" class="mb-6">
+                    <p class="text-lg text-gray-600">
+                        Welcome to the Algorithm Adventure! 🌟 Solve puzzles based on computational thinking concepts
+                        like loops, conditionals, and sorting to progress through the levels. Let’s get started!
+                    </p>
+                    <div class="py-5">
+                        <button id="start-game"
+                            class="bg-blue-500 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-blue-600 transition duration-200 transform hover:scale-105 active:scale-95">
+                            🎮 Start Game
+                        </button>
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+
+        <!-- Level 1: Loops -->
+        <div class="level py-5 px-5 max-w-md mx-auto" id="level-1" style="display: none;">
+            <h2 class="text-2xl font-bold text-center text-gray-800 mb-4">Level 1: Loops</h2>
+            <p class="text-gray-600 text-center mb-6">Help the character complete the loop by repeating actions.</p>
+
+            <div id="loop-game" class="flex flex-col items-center">
+                <p id="loop-counter" class="text-lg font-semibold mb-4">
+                    Click the button <span id="remaining-clicks" class="text-blue-500">5</span> times!
+                </p>
+                <button id="loop-button"
+                    class="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition-all duration-200">
+                    Click Me!
+                </button>
+                <p id="winning-message" class="text-green-500 font-bold mt-4 text-center" style="display: none;">
+                    🎉 Congratulations! You've completed Level 1! 🎉
+                </p>
+            </div>
+
+            <div class="flex justify-center mt-6" id="next-level-1-div" style="display: none;">
+                <button id="next-level-1"
+                    class="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition-all duration-200">
+                    🎮 Next Level
+                </button>
+            </div>
+        </div>
+
+        <!-- Level 2: Conditionals -->
+        <!-- Level 2: Conditionals with Sub-Levels -->
+        <div class="level p-6" id="level-2" style="display: none;">
+            <h2 class="text-2xl font-semibold mb-4">Level 2: Conditionals</h2>
+            <p class="mb-6 text-gray-700" id="conditional-instructions">Follow the instructions below for pattern
+                recognition.</p>
+
+            <!-- Sub-Level 1: Easy -->
+            <div id="sub-level-1" class="mb-6">
+                <p class="mb-2 text-lg">If the shape is red, click it; otherwise, choose the square.</p>
+                <div id="shape-grid" class="grid grid-cols-2 gap-4">
+                    <div class="shape circle w-24 h-24 bg-red-500 rounded-full flex items-center justify-center cursor-pointer hover:opacity-80"
+                        id="red-circle" data-color="red"></div>
+                    <div class="shape square w-24 h-24 bg-blue-500 rounded-lg flex items-center justify-center cursor-pointer hover:opacity-80"
+                        id="blue-square" data-color="blue"></div>
+                    <div class="shape circle w-24 h-24 bg-green-500 rounded-full flex items-center justify-center cursor-pointer hover:opacity-80"
+                        id="green-circle" data-color="green"></div>
+                    <div class="shape square w-24 h-24 bg-yellow-500 rounded-lg flex items-center justify-center cursor-pointer hover:opacity-80"
+                        id="yellow-square" data-color="yellow"></div>
+                </div>
+            </div>
+
+            <!-- Sub-Level 2: Medium Difficulty -->
+            <div id="sub-level-2" class="mb-6 flex flex-col items-center" style="display: none;">
+                <p class="mb-2 text-lg text-center">If the shape is blue or a square, click it; otherwise, choose the
+                    red circle.</p>
+                <div id="shape-grid-2" class="grid grid-cols-2 gap-4 justify-items-center">
+                    <div class="shape circle w-24 h-24 bg-red-500 rounded-full flex items-center justify-center cursor-pointer hover:opacity-80"
+                        id="red-circle" data-color="red"></div>
+                    <div class="shape square w-24 h-24 bg-blue-500 rounded-lg flex items-center justify-center cursor-pointer hover:opacity-80"
+                        id="blue-square" data-color="blue"></div>
+                    <div class="shape circle w-24 h-24 bg-green-500 rounded-full flex items-center justify-center cursor-pointer hover:opacity-80"
+                        id="green-circle" data-color="green"></div>
+                    <div class="shape square w-24 h-24 bg-yellow-500 rounded-lg flex items-center justify-center cursor-pointer hover:opacity-80"
+                        id="yellow-square" data-color="yellow"></div>
+                </div>
+            </div>
+
+            <!-- Sub-Level 3: Hard Difficulty -->
+            <div id="sub-level-3" class="mb-6 flex flex-col items-center" style="display: none;">
+                <p class="mb-2 text-lg text-center">If the shape is red and a square, click it; otherwise, choose the
+                    blue circle.</p>
+                <div id="shape-grid-3" class="grid grid-cols-2 gap-4 justify-items-center">
+                    <div class="shape circle w-24 h-24 bg-red-500 rounded-full flex items-center justify-center cursor-pointer hover:opacity-80"
+                        id="red-circle-3" data-color="red"></div>
+                    <div class="shape square w-24 h-24 bg-red-500 rounded-lg flex items-center justify-center cursor-pointer hover:opacity-80"
+                        id="red-square-3" data-color="red"></div>
+                    <div class="shape circle w-24 h-24 bg-blue-500 rounded-full flex items-center justify-center cursor-pointer hover:opacity-80"
+                        id="blue-circle-3" data-color="blue"></div>
+                    <div class="shape square w-24 h-24 bg-blue-500 rounded-lg flex items-center justify-center cursor-pointer hover:opacity-80"
+                        id="blue-square-3" data-color="blue"></div>
+                </div>
+            </div>
+
+            <p class="mt-4 text-gray-600" id="feedback-2"></p>
+            <div class="flex justify-center">
+                <button id="next-sub-level"
+                    class="mt-6 px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow hover:bg-blue-700 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+                    style="display: none;">
+                    Next Sub-Level
+                </button>
+            </div>
+            <div class="flex justify-center">
+                <button id="next-level-2"
+                    class="mt-2 px-6 py-2 bg-green-600 text-white font-semibold rounded-lg shadow hover:bg-green-700 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
+                    style="display: none;">
+                    Next Level (Sorting)
+                </button>
+            </div>
+        </div>
+
+        <!-- Level 3: Sorting Algorithms -->
+        <div class="level" id="level-3" style="display: none;">
+            <h2>Level 3: Sorting Algorithms</h2>
+            <p>Select a sorting algorithm and visualize how it works!</p>
+
+            <div>
+                <button id="generate-array">Generate Array</button>
+                <select id="algorithm-select">
+                    <option value="" disabled selected>Select Sorting Algorithm</option>
+                    <option value="bubbleSort">Bubble Sort</option>
+                    <option value="selectionSort">Selection Sort</option>
+                    <option value="insertionSort">Insertion Sort</option>
+                    <option value="quickSort">Quick Sort</option>
+                    <option value="mergeSort">Merge Sort</option>
+                </select>
+                <button id="start-sorting">Start Sorting</button>
+            </div>
+
+            <div class="canvas-container">
+                <h3>Original Array</h3>
+                <canvas id="original-array" width="500" height="200"></canvas>
+
+                <h3>Sorting Process</h3>
+                <canvas id="sorting-process" width="500" height="200"></canvas>
+
+                <h3>Final Sorted Array</h3>
+                <canvas id="final-array" width="500" height="200"></canvas>
+            </div>
+
+            <div id="algorithm-description" style="margin-top: 20px;">
+                <h2>Algorithm Description</h2>
+                <p id="description-text">Select an algorithm to see its description here.</p>
+            </div>
+
+            <button id="finish-btn">Finish</button>
+            <button id="try-another-sort-btn">Try another algorithm</button>
+        </div>
+    </div>
+
+    <!-- Game Over -->
+    <div class="game-over" id="game-over" style="display: none;">
+        <h2>Congratulations! You’ve completed the Algorithm Adventure!</h2>
+        <p>Your time: <span id="player-time"></span> seconds.</p>
+        <button id="submit-score">Submit Score</button>
+    </div>
+
+    <!-- Leaderboard -->
+    <div class="leaderboard" id="leaderboard" style="display: none;">
+        <h2>Leaderboard</h2>
+        <ul id="leaderboard-list"></ul>
+        <button id="restart-game">Restart Game</button>
+    </div>
+    </div>
+
+    <script src="game.js"></script>
+    <script src="your-sorting-algorithms.js"></script>
+
+</body>
+</html>
